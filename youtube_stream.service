@@ -1,4 +1,4 @@
-# this file runs /home/pi/pi_to_youtube_stream/youtube_stream as a service at boot time
+# this file runs /home/pi/pi_to_youtube_stream/youtube_stream.sh as a service at boot time
 # 
 # to get it started:
 # 1. permissions must be 644 for the .service file (this one)
@@ -17,7 +17,7 @@ After=local-fs.target basic.target
 [Service]
 Type=idle
 User=root
-ExecStart=/usr/bin/nohup /home/pi/pi_to_youtube_stream/youtube_stream 2>&1 &
+ExecStart=/usr/bin/nohup /home/pi/pi_to_youtube_stream/youtube_stream.sh 2>&1 &
 
 [Install]
 WantedBy=basic.target
