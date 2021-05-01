@@ -16,7 +16,7 @@ After=local-fs.target basic.target
 
 [Service]
 Type=idle
-User=root
+User=pi
 ExecStart=/usr/bin/nohup /home/pi/pi_to_youtube_stream/pi_to_youtube.sh 2>&1 &
 
 [Install]
