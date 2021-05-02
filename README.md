@@ -1,2 +1,2 @@
-# pi_to_youtube_stream
-use raspberry pi to stream to youtube. using this for the birdhouse
+# pi_to_rtmp_stream
+use raspberry pi to stream to rtmp (youtube/earthcam). using this for the birdhouse
