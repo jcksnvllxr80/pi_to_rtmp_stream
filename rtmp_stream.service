@@ -1,0 +1,23 @@
+# this file runs /home/pi/pi_to_rtmp_stream/pi_to_rtmp.sh as a service at boot time
+# 
+# to get it started:
+# 1. permissions must be 644 for the .service file (this one)
+# 2. sudo systemctl daemon-reload
+# 3. sudo systemctl enable /home/pi/pi_to_rtmp_stream/rtmp_stream.service
+# 
+# Usage:
+# sudo systemctl start | status | stop | restart rtmp_stream
+# OR
+# sudo service rtmp_stream start | status | stop | restart
+
+[Unit]
+Description=rtmp_stream listener and controller service
+After=local-fs.target basic.target
+
+[Service]
+Type=idle
+User=pi
+ExecStart=/usr/bin/nohup /home/pi/pi_to_rtmp_stream/pi_to_rtmp.sh 2>&1 &
+
+[Install]
+WantedBy=basic.target
