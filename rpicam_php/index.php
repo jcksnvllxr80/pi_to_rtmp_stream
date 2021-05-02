@@ -296,7 +296,7 @@
       </div>
 	  <?php simple_button(); ?>
       <div class="container-fluid text-center liveimage">
-		 <p><a href="https://myearthcam.com/jcksnvllxr80" style="font-weight:bold; font-size:30px; color:red;">The stream has moved to EarthCam now! Click here to visit that Page!</a></p>
+		 <p><a href="https://myearthcam.com/jcksnvllxr80" style="font-weight:bold; font-size:30px; color:black; background-color:powderblue;">The stream is on EarthCam now! Click here to visit that Page!</a></p>
 	     <iframe width="720" height="435" src="https://www.myearthcam.com/jcksnvllxr80?embed" frameborder="0" scrolling="no" allowfullscreen></iframe>
          <!--<div><img id="mjpeg_dest" <?php echo getLoadClass() . getImgWidth();?>
 		 <?php if(file_exists("pipan_on")) echo "ontouchstart=\"pipan_start()\""; ?> onclick="toggle_fullscreen(this);" src="./loading.jpg"></div>
