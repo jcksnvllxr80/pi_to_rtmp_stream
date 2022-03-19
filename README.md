@@ -42,12 +42,13 @@ connection:
 
 &nbsp;&nbsp;
 
-## Starting / Stopping / Restarting the Stream
+## Starting / Stopping / Restarting /Status the Stream
 
 ```bash
 sudo systemctl start rtmp_stream  # start the stream
 sudo systemctl stop rtmp_stream  # stop the stream
 sudo systemctl restart rtmp_stream  # restart the stream
+sudo systemctl status rtmp_stream  # restart the stream
 ```
 
 ### NOTE: the stream will auttomatically start on boot when enabled as a service (line: 3 under the installation instrucitons)
