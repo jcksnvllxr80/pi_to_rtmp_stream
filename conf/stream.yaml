@@ -1,0 +1,10 @@
+timelapse:
+  dir: /home/pi/pi_to_rtmp/timelapse
+  state: True
+  interval: 60
+  label_fmt: '%Y%m%d%H%M%S'
+video:
+  resolution: (640, 480)
+  framerate: 24
+connection:
+  listen_port: 9090
