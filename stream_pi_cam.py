@@ -7,8 +7,11 @@ import logging
 import picamera
 import yaml
 from threading import Thread
+from ast import literal_eval
 
-APP_DIR = "/home/pi/pi_to_rtmp_stream
+HOME_DIR = "/home/pi"
+APP_NAME = "pi_to_rtmp_stream"
+APP_DIR = "{}/{}".format(HOME_DIR, APP_NAME)
 CONF_RELATIVE_DIR = "conf/stream.yaml"
 CONFIG_FILE = "{}/{}".format(APP_DIR, CONF_RELATIVE_DIR)
 timelapse_settings = {}
@@ -59,7 +62,7 @@ def get_param(dict, key, default=None):
 
 def camera_setup():
   camera = picamera.PiCamera()
-  camera.resolution = get_param(video_settings, 'resolution', (1024, 768))
+  camera.resolution = literal_eval(get_param(video_settings, 'resolution', (1024, 768)))
   camera.framerate = get_param(video_settings, 'framerate', 24)
   return camera
 
@@ -68,7 +71,7 @@ def open_socket():
   socket_port = get_param(conn_settings, 'listen_port', 8080)
   logger.info("Opening listener on localhost, port: {}.".format(socket_port))
   server_socket = socket.socket()
-  server_socket.bind(('0.0.0.0', ))
+  server_socket.bind(('0.0.0.0', socket_port))
   server_socket.listen(0)
   return server_socket
 
@@ -97,8 +100,9 @@ def stream(server_socket, cam):
   connection = server_socket.accept()[0].makefile('wb')
   if cam.recording:
     stop_recording(cam)
+  resolution = literal_eval(get_param(video_settings, 'resolution', (1024, 768)))
   logger.info("Socket connected. Starting video stream.")
-  cam.start_recording(connection, format='h264', resize=video_settings.resolution, inline_headers=True)
+  cam.start_recording(connection, format='h264', resize=resolution, inline_headers=True)
 
 
 def stream_video_to_network(cam):
