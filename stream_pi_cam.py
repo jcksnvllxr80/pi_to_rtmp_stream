@@ -8,7 +8,9 @@ import picamera
 import yaml
 from threading import Thread
 
-CONFIG_FILE = "/home/pi/pi_to_rtmp/conf/stream.yaml"
+APP_DIR = "/home/pi/pi_to_rtmp_stream
+CONF_RELATIVE_DIR = "conf/stream.yaml"
+CONFIG_FILE = "{}/{}".format(APP_DIR, CONF_RELATIVE_DIR)
 timelapse_settings = {}
 video_settings = {}
 conn_settings = {}
@@ -81,7 +83,7 @@ def close_socket(server_socket):
 def do_timelapse(cam):
   logger.info("Starting timelapse thread.")
   sleep_time = get_param(timelapse_settings, 'interval', 3600)
-  timelapse_dir = get_param(timelapse_settings, 'dir', '/home/pi/pi_to_rtmp/timelapse')
+  timelapse_dir = '{}/{}'.format(APP_DIR, get_param(timelapse_settings, 'relative_dir', 'timelapse'))
   img_timestamp = get_param(timelapse_settings, 'label_fmt', '%Y%m%dT%H%M%SZ')
   while get_param(timelapse_settings, 'state'):
     time.sleep(sleep_time)

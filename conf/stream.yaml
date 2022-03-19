@@ -1,5 +1,5 @@
 timelapse:
-  dir: /home/pi/pi_to_rtmp/timelapse
+  relative_dir: timelapse
   state: True
   interval: 60
   label_fmt: '%Y%m%d%H%M%S'
