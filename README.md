@@ -7,8 +7,8 @@
 ## About
 
 - To use raspberry pi to stream rtmp to (youtube/earthcam) as well as simultaneously taking pictures for a timelapse. I am using this for the birdhouse in my back yard.
-- there are two parts to this apoplication
-  1. starts the stream and open a socket for a local device to connect and get the video stream
+- there are two parts to this application
+  1. start the stream and open a socket for a local device to connect and get the video stream
   2. connect to the network stream and send it to the rtmp endpoint using ffmpeg (usage shown below)
 
 &nbsp;&nbsp;
