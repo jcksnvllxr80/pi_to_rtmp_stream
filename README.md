@@ -1,5 +1,9 @@
 # pi_to_rtmp_stream
 
+## Image of Stream
+
+![alt text](./img/birdhouse_cam.png "Image of Stream")
+
 ## About
 
 - To use raspberry pi to stream rtmp to (youtube/earthcam) as well as simultaneously taking pictures for a timelapse. I am using this for the birdhouse in my back yard.
