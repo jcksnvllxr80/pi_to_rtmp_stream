@@ -2,3 +2,4 @@ wip/notes.sh
 timelapse
 transmit_stream_secret.sh
 transmit_stream_secret.service
+secrets.conf
